@@ -1,8 +1,23 @@
+# ============================================================
+# BMO 双层极小极大优化代码库依赖
+# 覆盖三类算法：
+#   1) 一阶基线 BMO（SSGDA / TSGDA-1 / TSGDA-2，PyTorch 实现）
+#   2) 一阶改进 HSGDA（超梯度辅助，纯 numpy 合成问题）
+#   3) 二/高阶改进 MS-BMO（STORM 动量 + Hessian 逆估计 CG，PyTorch 实现）
+# ============================================================
+
+# ---- 深度学习框架（一阶基线与 MS-BMO）----
 torch>=1.4.0
 torchvision>=0.5.0
-dominate>=2.4.0
-visdom>=0.1.8.8
+
+# ---- 数值计算与实验分析（三类算法共用）----
 numpy
 pandas
 matplotlib
+
+# ---- 单元测试（tests/test_bmo.py）----
 pytest
+
+# ---- 旧版训练可视化工具（util/ 目录，仅 train.py 流程需要，可选）----
+dominate>=2.4.0
+visdom>=0.1.8.8

@@ -11,7 +11,8 @@ SSGDA（算法1）、TSGDA-1（算法2）、TSGDA-2（算法3）。
 - 梯度范数裁剪，满足有界梯度假设。
 """
 
-from .data_generator import generate_simulation_data, make_dataloaders
+from .data_generator import generate_simulation_data, make_dataloaders, make_toy_manifold
 from .networks import WeightNet, MLPGenerator, MLPDiscriminator, ConvGenerator, ConvDiscriminator
 from .bmo_task import BMOTask, MetricHistory
 from .solvers import StepSizeSchedule, SSGDA, TSGDA1, TSGDA2, SOLVERS
+from .solver_ms import MSBMO
